@@ -7,6 +7,7 @@
 #include <QtCore>
 #include <astar.h>
 #include <time.h>
+#include <sys/time.h>
 
 class PRM
 {

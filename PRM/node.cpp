@@ -2,7 +2,7 @@
 
 Node::Node() : mId(-1)
 {
-    mPose = new ArPose();
+    mPose = new Pose();
 }
 
 Node::Node(int id) : Node()

@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <Aria.h>
+#include <pose.h>
 #include <vector>
 #include <QtCore>
 
@@ -17,7 +17,7 @@ public:
     Node(int id);
     vector<Node*> sortedClosest(Graph *graph, int numberClosestNeighbors);
     double distance(Node *node);
-    ArPose *mPose;
+    Pose *mPose;
     vector<Edge*> neighbors;
     int mId;
 private:

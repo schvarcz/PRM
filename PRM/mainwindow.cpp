@@ -55,7 +55,6 @@ MainWindow::MainWindow(QWidget *parent) :
             array[i][j] = 0.0;
         }
     }
-
     for(int i=50;i<100;i++)
     {
 
@@ -65,7 +64,6 @@ MainWindow::MainWindow(QWidget *parent) :
                 array[i][j] = 0.0;
         }
     }
-
     for(int i=200;i<250;i++)
     {
 
@@ -75,7 +73,6 @@ MainWindow::MainWindow(QWidget *parent) :
                 array[i][j] = 0.0;
         }
     }
-
     for(int i=50;i<100;i++)
     {
 
@@ -85,7 +82,6 @@ MainWindow::MainWindow(QWidget *parent) :
                 array[i][j] = 0.0;
         }
     }
-
     for(int i=200;i<250;i++)
     {
 
@@ -95,7 +91,6 @@ MainWindow::MainWindow(QWidget *parent) :
                 array[i][j] = 0.0;
         }
     }
-
     for(int i=200;i<250;i++)
     {
 
@@ -105,7 +100,6 @@ MainWindow::MainWindow(QWidget *parent) :
                 array[i][j] = 0.0;
         }
     }
-
     for(int i=125;i<175;i++)
     {
 

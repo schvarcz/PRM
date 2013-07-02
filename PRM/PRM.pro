@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     edge.cpp \
     glthread.cpp \
     glwidget.cpp \
-    astar.cpp
+    astar.cpp \
+    pose.cpp
 
 HEADERS  += mainwindow.h \
     node.h \
@@ -28,11 +29,10 @@ HEADERS  += mainwindow.h \
     edge.h \
     glthread.h \
     glwidget.h \
-    astar.h
+    astar.h \
+    pose.h
 
 FORMS    += mainwindow.ui
 
-LIBS += -L/usr/local/Aria/lib \
-    -lAria -lArNetworking -lX11
+LIBS += -lX11
 
-INCLUDEPATH += /usr/local/Aria/include/

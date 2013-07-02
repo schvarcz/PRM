@@ -50,6 +50,7 @@ Graph* PRM::createGraph(int numberOfNodes, int numberClosestNeighbors)
 
     qDebug() << "Grafo criado!";
     qDebug() << "Tempo criacao: " << ((double)(end.tv_usec-begin.tv_usec))/1000000 + (double)(end.tv_sec-begin.tv_sec);
+    qDebug() << "Nos: " << mGraph->V.size();
     qDebug() << "Edges: " << mGraph->E.size();
 
 }
@@ -192,7 +193,7 @@ void PRM::render()
 
         for(int i =0; i<mGraph->E.size();i++)
         {
-            ArPose *pL = mGraph->E.at(i)->mNodeL->mPose, *pR = mGraph->E.at(i)->mNodeR->mPose;
+            Pose *pL = mGraph->E.at(i)->mNodeL->mPose, *pR = mGraph->E.at(i)->mNodeR->mPose;
             glVertex2f((pL->getX()-mMapSize/2)*celRange,(mMapSize/2 - pL->getY())*celRange);
             glVertex2f((pR->getX()-mMapSize/2)*celRange,(mMapSize/2 - pR->getY())*celRange);
         }
@@ -202,7 +203,7 @@ void PRM::render()
         glBegin(GL_QUADS);
         for(int i =0;i<mGraph->V.size();i++)
         {
-            ArPose *p = mGraph->V.at(i)->mPose;
+            Pose *p = mGraph->V.at(i)->mPose;
 
             drawBox(
                 (p->getX() - 1 - mMapSize/2)*celRange,
@@ -225,7 +226,7 @@ void PRM::render()
 
         for(int i =0; i<path.size();i++)
         {
-            ArPose *pL = path.at(i)->mNodeL->mPose, *pR = path.at(i)->mNodeR->mPose;
+            Pose *pL = path.at(i)->mNodeL->mPose, *pR = path.at(i)->mNodeR->mPose;
             glVertex2f((pL->getX()-mMapSize/2)*celRange,(mMapSize/2 - pL->getY())*celRange);
             glVertex2f((pR->getX()-mMapSize/2)*celRange,(mMapSize/2 - pR->getY())*celRange);
         }
@@ -280,6 +281,7 @@ void PRM::setGoalNode(double x, double y)
             delete mGoalNode;
         mGoalNode= new Node();
         mGoalNode->mPose->setPose(x,y);
+        //mGoalNode->mPose->setPose(mMapSize-20,20);
     }
 }
 
@@ -293,5 +295,6 @@ void PRM::setInitNode(double x, double y)
             delete mInitNode;
         mInitNode= new Node();
         mInitNode->mPose->setPose(x,y);
+        //mInitNode->mPose->setPose(20,mMapSize-20);
     }
 }
